@@ -1,5 +1,5 @@
 # wrap_python_cpp_example
-Example of compiling C++ shared library (.so file) and wrapping with Python.  
+Simple example of compiling C++ shared library (.so file) and wrapping with Python.  
 In this example we use `g++` and `python3` on a Unix system.
 
 ## Step 1 - Compiling C++
