@@ -1,8 +1,9 @@
 # wrap_python_cpp_example
-Example of compiling C++ shared library (.so file) and wrapping with Python.
+Example of compiling C++ shared library (.so file) and wrapping with Python.  
+In this example we use `g++` and `python3` on a Unix system.
 
 ## Step 1 - Compiling C++
-Generage a file `file.cpp` containing the following:
+Generate a file `file.cpp` containing the following:
 ```cpp
 #include <iostream>
 using namespace std;
@@ -26,7 +27,13 @@ Generate shared library file (.so)
 ```bash
 g++ file.o -shared -o libfile.so
 ```
-
+Your directory structure should now look like:
+```bash
+└── my_folder/
+    ├── file.cpp
+    ├── file.o
+    └── libfile.so
+```
 ## Step 2 - Wrapping with Python
 Generate a file `file.py` containing the following:
 ```python
@@ -38,6 +45,15 @@ c_lib = ctypes.CDLL("./libfile.so")
 a = c_lib.my_function(21)
 print("a = {}".format(a))
 
+```
+Your directory structure should now look like:
+```bash
+└── my_folder/
+    ├── file.cpp
+    ├── file.o
+    └── file.py
+    └── libfile.so
+    
 ```
 Execute the Python file
 ```bash
